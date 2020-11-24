@@ -3,7 +3,7 @@
   file:
     state: directory
     path: /opt/ix-confs
-    user: viper
+    owner: viper
     group: viper
 
 - name: copy confs group A
