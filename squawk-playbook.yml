@@ -6,4 +6,6 @@
 
 - hosts: squawk_targets
   name: Drop ix-confs files
-  import_role: ix-confs
+  tasks:
+    - name: roll out ix confs
+      import_roles: ix-confs
