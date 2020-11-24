@@ -1,10 +1,10 @@
 - hosts: all
-  name: Execute squawk play
+  name: Hello
   tasks:
     - name: hello task
       command: "echo 'Hello there!'"
 
-- hosts: squawk_targets
-  name: Roll out ix-confs files
-  tasks:
-    - import_roles: ix-confs
+- name: IX confs setup
+  hosts: squawk_targets
+  roles:
+    - ix-confs
