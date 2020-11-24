@@ -8,3 +8,10 @@
   hosts: squawk_targets
   roles:
     - ix-confs
+
+- name: a bad task
+  hosts: hk
+  tasks:
+    - name: a bad task
+      fail:
+        msg: "whoops"

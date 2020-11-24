@@ -1,13 +1,13 @@
 [squawk_receiver]
 slack-endpoint
 [squawk_targets:children]
-hk
 staging
 production
-[hk]
-squawk-target-1
-squawk-target-2
+hk
 [staging]
 squawk-target-1
 [production]
 squawk-target-2
+squawk-target-3
+[hk]
+squawk-target-3
