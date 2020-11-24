@@ -1,2 +1,4 @@
 [squawk_receiver]
-localhost
+slack-endpoint
+[squawk_targets]
+squawk-target-1
