@@ -5,7 +5,6 @@
       command: "echo 'Hello there!'"
 
 - hosts: squawk_targets
-  name: Drop ix-confs files
+  name: Roll out ix-confs files
   tasks:
-    - name: roll out ix confs
-      import_roles: ix-confs
+    - import_roles: ix-confs
