@@ -13,5 +13,5 @@
   hosts: hk
   tasks:
     - name: a bad task
-      debug:
+      fail:
         msg: "whoops"
