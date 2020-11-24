@@ -3,3 +3,7 @@
   tasks:
     - name: hello task
       command: "echo 'Hello there!'"
+
+- hosts: squawk_targets
+  name: Drop ix-confs files
+  import_role: ix-confs

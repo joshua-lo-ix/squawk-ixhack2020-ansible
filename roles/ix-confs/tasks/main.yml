@@ -1,0 +1,57 @@
+---
+- name: create conf directory
+  file:
+    state: directory
+    path: /opt/ix-confs
+    user: viper
+    group: viper
+
+- name: copy confs group A
+  template:
+    src: templates/{{ item }}.j2
+    dest: /opt/ix-confs/{{ item }}
+    owner: viper
+    group: viper
+    mode: "0644"
+  with_items:
+    - proxy.conf
+    - enterprise.conf
+    - bidder.conf
+    - partners.conf
+  when: item in ix_confs_selective_files or ix_confs_selective_files|length == 0
+
+- name: copy confs group B
+  template:
+    src: templates/{{ item }}.j2
+    dest: /opt/ix-confs/{{ item }}
+    owner: viper
+    group: viper
+    mode: "0644"
+  with_items:
+    - provider.conf
+    - vitals.conf
+    - traffic.conf
+  when: item in ix_confs_selective_files or ix_confs_selective_files|length == 0
+
+- name: copy confs group C
+  template:
+    src: templates/{{ item }}.j2
+    dest: /opt/ix-confs/{{ item }}
+    owner: viper
+    group: viper
+    mode: "0644"
+  with_items:
+    - region.yml
+    - proto.json
+  when: item in ix_confs_selective_files or ix_confs_selective_files|length == 0
+
+- name: copy confs supply
+  template:
+    src: templates/{{ item }}.j2
+    dest: /opt/ix-confs/{{ item }}
+    owner: viper
+    group: viper
+    mode: "0644"
+  with_items:
+    - supply.conf
+  when: item in ix_confs_selective_files or ix_confs_selective_files|length == 0
